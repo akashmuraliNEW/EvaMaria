@@ -86,6 +86,13 @@ class Bot(Client):
                 yield message
                 current += 1
 
+@app_message(filters.group)
+async def auto_delete(bot, message):
+ await asyncio.sleep(60)
+ await message.delete()
+                
+                
+
 
 app = Bot()
 app.run()
