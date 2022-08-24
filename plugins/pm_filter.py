@@ -38,10 +38,7 @@ async def give_filter(client, message):
         await asyncio.sleep(1800)
         await client.delete_messages(message.chat.id, message.message_id)
 
-@Client.on_message(filters.group)
-async def auto_delete(bot, message):
- await asyncio.sleep(60)
- await message.delete()
+
     
 @Client.on_callback_query(filters.regex(r"^next"))
 async def next_page(bot, query):
